@@ -9,6 +9,8 @@ begin
 rescue LoadError
 end
 
+Rake::Task[:spec].clear
+
 RSpec::Core::RakeTask.new(:rspec) do |t|
   t.pattern = 'spec/lib/**/*_spec.rb'
 end
