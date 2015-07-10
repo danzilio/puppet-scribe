@@ -1,0 +1,3 @@
+fixtures:
+  repositories:
+    report_all_the_things: https://github.com/danzilio/puppet-report_all_the_things
