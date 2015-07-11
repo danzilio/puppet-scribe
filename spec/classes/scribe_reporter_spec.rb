@@ -11,7 +11,7 @@ describe 'scribe_reporter' do
   let(:params) {{ :hosts => '127.0.0.1:1463' }}
 
   context 'with defaults' do
-    it { is_expected.to contain_file(scribeconf).with_content /hosts:\s+-\s+"127.0.0.1:1463"/ }
+    it { is_expected.to contain_file(scribeconf).with_content /hosts:\s+-\s+"?127.0.0.1:1463"?/ }
     it { is_expected.to contain_file(scribeconf).with_content /category:\s+puppet/ }
     it { is_expected.to contain_package('scribe').that_comes_before("File[#{scribeconf}]") }
     it { is_expected.to contain_file(confdir).with_ensure('directory') }
