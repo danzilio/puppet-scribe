@@ -64,6 +64,6 @@
     {
       "name": "danzilio/report_all_the_things",
       "version_requirement": ">=1.0.0 <2.0.0"
-    },
+    }
   ]
 }
