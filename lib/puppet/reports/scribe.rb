@@ -8,6 +8,6 @@ Puppet::Reports.register_report(:scribe) do
   end
 
   def generate
-    JSON.pretty_generate(self.to_h)
+    JSON.pretty_generate(self.report_all_the_things)
   end
 end

@@ -13,7 +13,7 @@ module Puppet
       def log(data)
         begin
           client.log data.strip
-        rescue ScribeThrift::Client::TransportException
+        rescue Thrift::TransportException
           Puppet.warning 'The scribe server did not respond.'
           return nil
         rescue ThriftClient::NoServersAvailable
