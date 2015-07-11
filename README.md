@@ -1,6 +1,8 @@
 [![Puppet Forge](http://img.shields.io/puppetforge/v/danzilio/scribe_reporter.svg?style=flat)](https://forge.puppetlabs.com/danzilio/scribe_reporter) [![Build Status](https://travis-ci.org/danzilio/puppet-scribe_reporter.svg)](https://travis-ci.org/danzilio/puppet-scribe_reporter) [![Documentation Status](http://img.shields.io/badge/docs-puppet--strings-ff69b4.svg?style=flat)](http://danzilio.github.io/puppet-scribe_reporter)
 
-This is a report processor for Puppet that sends the raw Puppet reports to a [Scribe](https://github.com/facebookarchive/scribe) log server. This processor requires the `scribe` [gem](https://github.com/twitter/scribe). This module also contains a `scribe_reporter` class to manage the configuration file and gem. This module depends on the [report_all_the_things](https://github.com/danzilio/puppet-report_all_the_things) module.
+This is a report processor for Puppet that sends entire Puppet reports to a [Scribe](https://github.com/facebookarchive/scribe) log server. This processor requires the `scribe` [gem](https://github.com/twitter/scribe). This module also contains a `scribe_reporter` class to manage the configuration file and gem. This module depends on the [report_all_the_things](https://github.com/danzilio/puppet-report_all_the_things) module.
+
+This module uses the `report_all_the_things` module and sends the whole report. Most report processors only send the  `metrics` or `logs` sections of a report. This sends everything: `metrics`, `logs`, `resource_statuses`, etc... This could potentially be a *lot* of data. The motivation behind the `report_all_the_things` module (which this module implements) was to get all of the data into an analytics platform and use those tools to analyze the data. Please take the time to understand the implications of this.
 
 ## Requirements
 
