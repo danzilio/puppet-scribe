@@ -1,4 +1,4 @@
 ---
   hosts:
-    - localhost:1463
+    - 127.0.0.1:1463
   prefix: puppet

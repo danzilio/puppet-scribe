@@ -9,6 +9,7 @@ group :test do
   gem 'rspec-core', '3.1.7'
   gem 'metadata-json-lint'
   gem 'scribe'
+  gem 'mocha'
 end
 
 group :development do

@@ -1,4 +1,5 @@
 require 'puppet'
+require 'mocha/test_unit'
 
 Dir[File.expand_path(File.join(__FILE__, '..', 'fixtures', 'modules', '*', 'lib'))].each do |lib|
   $LOAD_PATH.unshift lib

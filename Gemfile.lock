@@ -150,6 +150,7 @@ PLATFORMS
 DEPENDENCIES
   guard-rake
   metadata-json-lint
+  mocha
   pry
   puppet (~> 3.8)
   puppet-blacksmith

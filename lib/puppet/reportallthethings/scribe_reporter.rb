@@ -15,8 +15,10 @@ module Puppet
           client.log data.strip
         rescue ScribeThrift::Client::TransportException
           Puppet.warning 'The scribe server did not respond.'
+          return nil
         rescue ThriftClient::NoServersAvailable
           Puppet.warning 'No scribe servers are available.'
+          return nil
         end
       end
 
