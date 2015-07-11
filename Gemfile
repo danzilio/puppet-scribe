@@ -5,6 +5,9 @@ group :test do
   gem 'puppet', ENV['PUPPET_VERSION'] || '~> 3.8'
   # https://github.com/rspec/rspec-core/issues/1864
   gem 'rspec'
+  gem 'puppet-lint'
+  gem 'rspec-puppet'
+  gem 'puppet-syntax'
   gem 'puppetlabs_spec_helper'
   gem 'rspec-core', '3.1.7'
   gem 'metadata-json-lint'

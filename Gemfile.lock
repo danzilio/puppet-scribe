@@ -154,10 +154,13 @@ DEPENDENCIES
   pry
   puppet (~> 3.8)
   puppet-blacksmith
+  puppet-lint
+  puppet-syntax
   puppetlabs_spec_helper
   rake
   rspec
   rspec-core (= 3.1.7)
+  rspec-puppet
   scribe
   travis
   travis-lint

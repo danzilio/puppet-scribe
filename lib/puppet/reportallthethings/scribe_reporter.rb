@@ -36,7 +36,7 @@ module Puppet
 
       def config
         return @config if @config
-        configfile = File.join([File.dirname(Puppet.settings[:config]), "scribe.yaml"])
+        configfile = File.join(Puppet.settings[:confdir], "scribe.yaml")
         raise(Puppet::ParseError, "Scribe report config file #{configfile} not readable") unless File.exist?(configfile)
         @config = symbolize_options(YAML.load_file(configfile))
       end

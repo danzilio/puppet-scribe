@@ -3,7 +3,6 @@ require 'puppet/reportallthethings/scribe_reporter'
 
 describe Puppet::ReportAllTheThings::ScribeReporter do
   subject { Puppet::ReportAllTheThings::ScribeReporter.new }
-  before { Puppet.settings[:config] = File.join(@fixture_path, 'puppet.conf') }
 
   it 'should load our configuration file' do
     expect(subject.config).to be_a Hash
@@ -18,7 +17,7 @@ describe Puppet::ReportAllTheThings::ScribeReporter do
   end
 
   it 'should raise an error with a bad config file' do
-    Puppet.settings[:config] = '/nonexistent/puppet.conf'
+    Puppet.settings[:confdir] = '/nonexistent'
     expect { subject.config }.to raise_error Puppet::ParseError
   end
 
