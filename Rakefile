@@ -3,6 +3,7 @@ require 'puppetlabs_spec_helper/rake_tasks'
 require 'puppet-syntax/tasks/puppet-syntax'
 require 'puppet-lint/tasks/puppet-lint'
 require 'rspec/core/rake_task'
+require 'metadata-json-lint/rake_task'
 
 # These two gems aren't always present, for instance
 # on Travis with --without development
@@ -38,17 +39,12 @@ end
 task :test => [
   :syntax,
   :lint,
+  :metadata_lint,
   :spec_prep,
   :rspec,
   :spec_standalone,
   :spec_clean,
 ]
-
-desc "Run metadata-json-lint"
-task :metadata do
-  out = %x{bundle exec metadata-json-lint metadata.json}
-  $? != 0 ? (raise out) : (puts "Metadata OK!")
-end
 
 namespace :strings do
   doc_dir = File.dirname(__FILE__) + '/doc'
@@ -63,7 +59,7 @@ namespace :strings do
         system 'git init'
         system "git remote add origin #{git_uri}"
         system 'git pull'
-        system 'git checkout gh-pages'
+        system 'git checkout -b gh-pages'
       end
     end
   end
