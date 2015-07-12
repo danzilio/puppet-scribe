@@ -1,5 +1,8 @@
 .*.sw?
 pkg
+doc
+.yardoc
+.modules
 spec/fixtures/*
 !spec/fixtures/puppet
 .rspec_system
