@@ -1,6 +1,6 @@
 {
   "name": "danzilio-scribe_reporter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "David Danzilio",
   "summary": "A report processor that sends whole Puppet reports to a Scribe log server.",
   "license": "Apache-2.0",
