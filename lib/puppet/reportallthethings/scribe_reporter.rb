@@ -23,11 +23,11 @@ module Puppet
       end
 
       def client
-        @client ||= Scribe.new hosts, prefix
+        @client ||= Scribe.new hosts, category
       end
 
-      def prefix
-        config[:prefix]
+      def category
+        config[:category]
       end
 
       def hosts

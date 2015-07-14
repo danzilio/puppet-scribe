@@ -6,13 +6,13 @@ describe Puppet::ReportAllTheThings::ScribeReporter do
 
   it 'should load our configuration file' do
     expect(subject.config).to be_a Hash
-    expect(subject.config[:prefix]).to eq 'puppet'
+    expect(subject.config[:category]).to eq 'puppet'
     expect(subject.config[:hosts]).to include '127.0.0.1:1463'
     subject.config.keys.each do |key|
       expect(key).to be_a Symbol
     end
 
-    expect(subject.prefix).to eq 'puppet'
+    expect(subject.category).to eq 'puppet'
     expect(subject.hosts).to include '127.0.0.1:1463'
   end
 
